@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cms</title>
+    <link rel="icon" type="image/x-icon" href="<%= Statics.url_public_img%>favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inicio CSS-->
+    <link rel="stylesheet" type="text/css" href="<%= Statics.url_bower%>bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%= Statics.url_bower%>font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%= Statics.url_public_css%>styles.css" />
+    <%= load_css %>
+    <!-- Fin CSS-->
+  </head>
+  <body>
+      <!-- Inicio Navbar1-->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href=""<%=Url.base_url%>""><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
+                <li><a href="#">Ayuda</a></li>
+              </ul>
+              <ul class="nav navbar-nav pull-right">
+                  <li id="li-usuario-logueado"><a href="<%=Url.base_url + 'login/ver'%>">Pepe Valdivia</a></li>
+                  <li id="li-cerrar-sesion"><a href="<%=Url.base_url + 'login/cerrar'%>">Cerrar Sesión</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+      <!-- Fin Navbar1-->
+      <!-- Inicio Navbar2-->
+      <div class="container-fluid" id="navbar-2">
+          <div id="nombre-app" class="col-md-3">
+              Dashboard HTML
+          </div>
+          <div class="col-md-9">
+              <ul class="list-inline pull-right">
+                  <%= menu_modulos(@modulo) %>
+              </ul>
+          </div>
+      </div>
+      <!-- Fin Navbar2-->
+      <!-- Inicio Yield-->
+      <div class="container-fluid">
+          <div class="col-md-2" id="menu-izq">
+              <%= menu_izquierdo(@modulo) %>
+          </div>
+          <div class="col-md-10" id="workspace">
+              <%= yield %>
+          </div>
+      </div>
+      <!-- Fin Yield-->
+      <!-- Inicio Footer-->
+      <footer class="footer">
+          <div class="row mapa-sitio">
+              <div class="col-md-12">
+                  <b>Mapa del Sitio</b>
+              </div>
+          </div>
+          <div class="row desarrollado">
+              <div class="col-md-12">
+                  <i class="fa fa-car" aria-hidden="true"></i><b>2015 Software Web Perú E.I.R.L. (<a href="http://softweb.pe">Ir</a>)</b>&nbsp;&nbsp;&nbsp; Todos los derechos reservados
+                  <a href="#" class="pull-right">Términos de Uso</a>
+                  <a href="#" class="pull-right">Política de Privacidad</a>
+              </div>
+          </div>
+      </footer>
+      <!-- Fin Footer-->
+      <!-- Inicio JS-->
+      <script src="<%= Statics.url_bower%>jquery/dist/jquery.min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url_bower%>bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url_bower%>underscore/underscore-min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url%>swp/js/mootools-core.min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url%>swp/js/mootools.min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url%>swp/js/mootools-interfaces.min.js" type="text/javascript"></script>
+      <script src="<%= Statics.url%>assets/site/js/app.js" type="text/javascript"></script>
+      <%= load_js %>
+      <!-- Fin JS-->
+  </body>
+</html>
