@@ -4,8 +4,30 @@ module DemoProject
     register Padrino::Helpers
     enable :sessions
 
+    before :index do
+        if defined? session[:estado]
+            if session[:estado] != 'autenticado'
+                redirect Url.base_url + 'login'
+            end
+        else
+            redirect Url.base_url + 'login'
+        end
+    end
+
     get :index do
         "HOME"
+    end
+
+    private
+    def get(url)
+        response = HTTParty.get(URI.encode(url))
+        response.body
+    end
+
+    private
+    def post(url)
+        response = HTTParty.post(URI.encode(url))
+        response.body
     end
 
     def logeado(n)

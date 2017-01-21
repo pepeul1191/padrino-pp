@@ -26,11 +26,16 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  # enable :sessions
-  set :session_secret, '991f228e5146ed6c476686411203eff79c8f92af9475a1526dd50140e2d45c48'
-  set :protection, :except => :path_traversal
-  set :protect_from_csrf, true
+ 	 # enable :sessions
+  	set :session_secret, '991f228e5146ed6c476686411203eff79c8f92af9475a1526dd50140e2d45c48'
+  	set :protection, :except => :path_traversal
+  	set :protect_from_csrf, false
+  	set :session_secret, 'super secret'
 end
 
+$cipher_key = 'eacpsqGNosmbNneg'
+$nombre_app = 'Padrino-PP'
+
 # Mounts the core application for this project
+
 Padrino.mount('DemoProject::App', :app_file => Padrino.root('app/app.rb')).to('/')
