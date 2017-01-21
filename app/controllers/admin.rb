@@ -1,27 +1,25 @@
 DemoProject::App.controllers :admin do
+    before :index do
+        puts "XD"
+    end
   
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
-
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
-  
-    get :index do
+    get :index, :map => '/admin' do
         @title = "Padrido Intento 2"
         render "admin/index", :layout => :blank
+    end
+
+    before :detalle do
+        puts "1++++++++++++++++++++++++++++++++++++++++++"
+        if params[:data].to_i < 18
+            puts "es menor de edad???"
+        else
+            puts "es mayor de edad???"
+        end
+        puts "2++++++++++++++++++++++++++++++++++++++++++"
+    end
+
+    get :detalle, :map => '/admin/detalle/:id' do
+       "detalle???<br> id = " + params[:id] + "<br> data = " + params[:data]
     end
 
     get :new do
@@ -29,8 +27,8 @@ DemoProject::App.controllers :admin do
         "nuevo"
     end
 
-    post :create do
-
+    post :create, :map => '/admin/enviar/' do
+      "hola"
     end
 
 end

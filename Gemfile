@@ -24,11 +24,11 @@ gem 'rake'
 gem 'padrino', '0.13.3.3'
 
 #Servidor Passenger
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+#gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 # $ bundle exec passenger start
 
 #Servidor Puma
-#gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.0'
 # $ rails s Puma
 
 gem 'httparty'
