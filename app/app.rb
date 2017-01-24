@@ -4,6 +4,10 @@ module DemoProject
     register Padrino::Helpers
     enable :sessions
 
+    before do
+         headers['server'] = "Ruby"
+    end
+
     before :index do
         if defined? session[:estado]
             if session[:estado] != 'autenticado'
@@ -14,9 +18,15 @@ module DemoProject
         end
     end
 
-    get :index do
-        "HOME"
+    error Sinatra::NotFound do
+        redirect Url.base_url + 'access/error/404'
     end
+    
+    get :index do
+        redirect Url.base_url + 'home'
+    end
+
+    # Métodos
 
     private
     def get(url)
@@ -30,11 +40,13 @@ module DemoProject
         response.body
     end
 
-    def logeado(n)
-        if n % 2 == 0
-            redirect "http://softweb.pe"
+    def logueado
+        if defined? session[:estado]
+            if session[:estado] != 'autenticado'
+                redirect Url.base_url + 'access/error/5051'
+            end
         else
-            redirect "http://ulima.edu.pe"
+            redirect Url.base_url + 'access/error/5051'
         end
     end
 
@@ -80,18 +92,6 @@ module DemoProject
     #   configure :development do
     #     set :foo, :bar
     #     disable :asset_stamp # no asset timestamping for dev
-    #   end
-    #
-
-    ##
-    # You can manage errors like:
-    #
-    #   error 404 do
-    #     render 'errors/404'
-    #   end
-    #
-    #   error 500 do
-    #     render 'errors/500'
     #   end
     #
   end

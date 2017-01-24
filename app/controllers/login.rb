@@ -1,6 +1,10 @@
 DemoProject::App.controllers :login do
     before :index do
-        puts "XD"
+        if defined? session[:estado]
+            if session[:estado] == 'autenticado'
+                redirect Url.base_url + 'home'
+            end
+        end
     end
   
     get :index, :map => '/login' do
@@ -18,7 +22,7 @@ DemoProject::App.controllers :login do
             session[:usuario] = usuario
             session[:tiempo] = Time.now.strftime('%Y-%m-%d %H:%M:%S')
             
-            redirect_to Url.base_url + ''
+            redirect_to Url.base_url + 'home'
         else
             @css = ['assets/login/css/index']
             @title = 'Login'
@@ -34,7 +38,7 @@ DemoProject::App.controllers :login do
         rescue TypeError => e
             return 'Alguno de las variables de session están nulas'
         end
-  end
+   end
 
     get :cerrar, :map => 'login/cerrar' do
         session.clear
