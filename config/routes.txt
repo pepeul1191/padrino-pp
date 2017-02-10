@@ -2,7 +2,7 @@
 
     get 'error/access/:id', to: 'error#access'
 
-    get 'home', to: 'home#index'
+get 'home', to: 'home#index'
 
 get 'login', to: 'login#index'
 post 'login/acceder' => 'login#acceder'

@@ -1,6 +1,8 @@
 DemoProject::App.controllers :error do
     get :index, :map => 'access/error/:codigo_error' do
+        status 400
         numero_error = params[:codigo_error]
+        
         case numero_error.to_i
         when 404
             error = {:numero => 404, :mensaje => 'Archivo no encontrado', :descripcion => 'La página que busca no se encuentra en el servidor', :icono => 'fa fa-exclamation-triangle'}
