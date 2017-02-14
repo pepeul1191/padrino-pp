@@ -1,6 +1,6 @@
     root 'login#index'
 
-    get 'error/access/:id', to: 'error#access'
+get 'error/access/:id', to: 'error#access'
 
 get 'home', to: 'home#index'
 
@@ -20,12 +20,12 @@ get '/accesos/menus' => 'accesos/menu#index'
 # accesos / modulo
 get '/accesos/modulo/listar' => 'accesos/modulo#listar'
 post '/accesos/modulo/guardar' => 'accesos/modulo#guardar'
-    # accesos / permiso
+# accesos / permiso
 get '/accesos/permisos' => 'accesos/permiso#index'
 get '/accesos/permiso/listar' => 'accesos/permiso#listar'
 post '/accesos/permiso/guardar' => 'accesos/permiso#guardar'
 get '/accesos/permiso/listar_asociados/:id' => 'accesos/permiso#listar_asociados'
-    # accesos / rol
+# accesos / rol
 get '/accesos/roles' => 'accesos/rol#index'
 get '/accesos/rol/listar' => 'accesos/rol#listar'
 post '/accesos/rol/guardar' => 'accesos/rol#guardar'
@@ -33,19 +33,16 @@ post '/accesos/rol/asociar_permisos' => 'accesos/rol#asociar_permisos'
 # accesos / subtitulo
 get '/accesos/subtitulo/listar/:modulo_id' => 'accesos/subtitulo#listar'
 post '/accesos/subtitulo/guardar' => 'accesos/subtitulo#guardar'
-    # accesos / usuario
-    get '/accesos/usuarios' => 'accesos/usuario#index'
-    get '/accesos/usuario/editar_usuario' => 'accesos/usuario#editar'
-    get '/accesos/usuario/ver_roles_permisos' => 'accesos/usuario#ver_roles_permisos'
-    get '/accesos/usuario/listar' => 'accesos/usuario#listar'
-    get '/accesos/usuario/listar_permisos/:usuario_id' => 'accesos/usuario#listar_permisos'
-    get '/accesos/usuario/listar_roles/:usuario_id' => 'accesos/usuario#listar_roles'
-    post '/accesos/usuario/asociar_permisos' => 'accesos/usuario#asociar_permisos'
-    post '/accesos/usuario/asociar_roles' => 'accesos/usuario#asociar_roles'
-    get '/accesos/usuario/ver_accesos' => 'accesos/usuario#ver_accesos'
-    get '/accesos/usuario/listar_accesos/:usuario_id' => 'accesos/usuario#listar_accesos'
-
-    #match 'controller(/:action(/:id))', :via => :get
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# accesos / usuario
+get '/accesos/usuarios' => 'accesos/usuario#index'
+get '/accesos/usuario/editar_usuario' => 'accesos/usuario#editar'
+get '/accesos/usuario/ver_roles_permisos' => 'accesos/usuario#ver_roles_permisos'
+get '/accesos/usuario/listar' => 'accesos/usuario#listar'
+get '/accesos/usuario/listar_permisos/:usuario_id' => 'accesos/usuario#listar_permisos'
+get '/accesos/usuario/listar_roles/:usuario_id' => 'accesos/usuario#listar_roles'
+post '/accesos/usuario/asociar_permisos' => 'accesos/usuario#asociar_permisos'
+post '/accesos/usuario/asociar_roles' => 'accesos/usuario#asociar_roles'
+get '/accesos/usuario/ver_accesos' => 'accesos/usuario#ver_accesos'
+get '/accesos/usuario/listar_accesos/:usuario_id' => 'accesos/usuario#listar_accesos'
 
     #get '*unmatched_route' => 'application#not_found'
