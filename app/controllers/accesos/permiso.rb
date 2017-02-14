@@ -3,16 +3,16 @@ DemoProject::App.controllers :permiso do
         logueado
     end
   
-    get :index, :map => '/accesos/roles' do
-        @title = 'Gestión de Roles'
+    get :index, :map => '/accesos/permisos' do
+        @title = 'Gestión de Permisos'
         @modulo = 'Accesos'
         @css = ['bower_components/swp-plugins/assets/css/mootools.grid']
-        @js = ['bower_components/swp-plugins/assets/js/mootools.dao', 'bower_components/swp-plugins/assets/js/mootools.form', 'bower_components/swp-plugins/assets/js/mootools.observer', 'bower_components/swp-plugins/assets/js/mootools.grid', 'bower_components/swp-plugins/assets/js/mootools.chain', 'assets/accesos/rol/js/index']
+        @js = ['bower_components/swp-plugins/assets/js/mootools.dao', 'bower_components/swp-plugins/assets/js/mootools.form', 'bower_components/swp-plugins/assets/js/mootools.observer', 'bower_components/swp-plugins/assets/js/mootools.grid', 'bower_components/swp-plugins/assets/js/mootools.chain', 'assets/accesos/permiso/js/index']
 
-        render 'accesos/rol/index', :layout => :application
+        render 'accesos/permiso/index', :layout => :application
     end
 
-    get :listar, :map => '/accesos/rol/listar' do
+    get :listar, :map => '/accesos/permiso/listar' do
        get(Url.service('accesos') + "permiso/listar")
     end
 

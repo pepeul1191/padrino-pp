@@ -3,13 +3,13 @@ DemoProject::App.controllers :rol do
         logueado
     end
   
-    get :index, :map => '/accesos/permisos' do
-        @title = 'Gestión de Permisos'
+    get :index, :map => '/accesos/roles' do
+        @title = 'Gestión de Roles'
         @modulo = 'Accesos'
         @css = ['bower_components/swp-plugins/assets/css/mootools.grid']
-        @js = ['bower_components/swp-plugins/assets/js/mootools.dao', 'bower_components/swp-plugins/assets/js/mootools.form', 'bower_components/swp-plugins/assets/js/mootools.observer', 'bower_components/swp-plugins/assets/js/mootools.grid', 'bower_components/swp-plugins/assets/js/mootools.chain', 'assets/accesos/permiso/js/index']
+        @js = ['bower_components/swp-plugins/assets/js/mootools.dao', 'bower_components/swp-plugins/assets/js/mootools.form', 'bower_components/swp-plugins/assets/js/mootools.observer', 'bower_components/swp-plugins/assets/js/mootools.grid', 'bower_components/swp-plugins/assets/js/mootools.chain', 'assets/accesos/rol/js/index']
 
-        render 'accesos/permiso/index', :layout => :application
+        render 'accesos/rol/index', :layout => :application
     end
 
     get :listar, :map => '/accesos/rol/listar' do
