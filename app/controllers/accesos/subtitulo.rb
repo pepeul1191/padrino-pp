@@ -1,5 +1,5 @@
 DemoProject::App.controllers :subtitulo do
-    before :index do
+    before :index, :guardar do
         logueado
     end
   
@@ -8,7 +8,7 @@ DemoProject::App.controllers :subtitulo do
 		get(Url.service('accesos') + "subtitulo/listar/" + modulo_id.to_s)
     end
 
-    post :index, :map => '/accesos/subtitulo/guardar' do
+    post :guardar, :map => '/accesos/subtitulo/guardar' do
 		data = params[:data]
 		post(Url.service('accesos') + "subtitulo/guardar?data=" + data)
     end

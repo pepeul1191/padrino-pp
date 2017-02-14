@@ -12,7 +12,7 @@ get 'login/cerrar' => 'login#cerrar'
 # accesos
 # accesos / item
 get '/accesos' => 'accesos#index'
-    get '/accesos/item/listar/:subtitulo_id' => 'accesos/item#listar'
+get '/accesos/item/listar/:subtitulo_id' => 'accesos/item#listar'
 post '/accesos/item/guardar' => 'accesos/item#guardar'
 # accesos / menu
 get '/accesos/menus' => 'accesos/menu#index'
@@ -21,16 +21,15 @@ get '/accesos/menus' => 'accesos/menu#index'
 get '/accesos/modulo/listar' => 'accesos/modulo#listar'
 post '/accesos/modulo/guardar' => 'accesos/modulo#guardar'
     # accesos / permiso
-    get '/accesos/permisos' => 'accesos/permiso#index'
-    get '/accesos/permiso/listar' => 'accesos/permiso#listar'
-    post '/accesos/permiso/guardar' => 'accesos/permiso#guardar'
-    get '/accesos/permiso/listar_asociados/:id' => 'accesos/permiso#listar_asociados'
+get '/accesos/permisos' => 'accesos/permiso#index'
+get '/accesos/permiso/listar' => 'accesos/permiso#listar'
+post '/accesos/permiso/guardar' => 'accesos/permiso#guardar'
+get '/accesos/permiso/listar_asociados/:id' => 'accesos/permiso#listar_asociados'
     # accesos / rol
-    get '/accesos/roles' => 'accesos/rol#index'
-    get '/accesos/roles' => 'accesos/rol#index'
-    get '/accesos/rol/listar' => 'accesos/rol#listar'
-    post '/accesos/rol/guardar' => 'accesos/rol#guardar'
-    post '/accesos/rol/asociar_permisos' => 'accesos/rol#asociar_permisos'
+get '/accesos/roles' => 'accesos/rol#index'
+get '/accesos/rol/listar' => 'accesos/rol#listar'
+post '/accesos/rol/guardar' => 'accesos/rol#guardar'
+post '/accesos/rol/asociar_permisos' => 'accesos/rol#asociar_permisos'
 # accesos / subtitulo
 get '/accesos/subtitulo/listar/:modulo_id' => 'accesos/subtitulo#listar'
 post '/accesos/subtitulo/guardar' => 'accesos/subtitulo#guardar'

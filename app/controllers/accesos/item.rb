@@ -1,5 +1,5 @@
 DemoProject::App.controllers :item do
-    before :index do
+    before :index, :guardar do
         logueado
     end
   
@@ -8,7 +8,7 @@ DemoProject::App.controllers :item do
 		get(Url.service('accesos') + 'item/listar/' + subtitulo_id.to_s)
     end
 
-    post :index, :map => '/accesos/item/guardar' do
+    post :guardar, :map => '/accesos/item/guardar' do
 		data = params[:data]
 		post(Url.service('accesos') + "item/guardar?data=" + data)
     end
