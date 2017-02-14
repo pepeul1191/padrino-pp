@@ -29,6 +29,17 @@ module DemoProject
 	       rpta.html_safe
 	    end
 
+	    def load_test_js
+	        rpta = ''
+	        if defined? @test_js
+	           @test_js.each do |n|
+	               temp = '<script src="' + Url.service('test_js') + n + '.js" type="text/javascript"></script>'
+	               rpta = rpta + temp
+	           end
+	       end
+	       rpta
+	    end
+
 	    def load_modal_css
 	        rpta = ''
 	        if defined? @modal_css

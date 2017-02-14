@@ -18,9 +18,9 @@ module DemoProject
         end
     end
 
-    error Sinatra::NotFound do
-        redirect Url.base_url + 'access/error/404'
-    end
+    #error Sinatra::NotFound do
+        #redirect Url.base_url + 'access/error/404'
+    #end
     
     get :index do
         redirect Url.base_url + 'home'
