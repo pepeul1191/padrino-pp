@@ -30,8 +30,13 @@ module DemoProject
 
     private
     def get(url)
-        response = HTTParty.get(URI.encode(url))
-        response.body
+        begin
+            response = HTTParty.get(URI.encode(url))
+            response.body
+        rescue Exception => e
+            puts "OERRROERASFADSF"
+            ""
+        end
     end
 
     private
