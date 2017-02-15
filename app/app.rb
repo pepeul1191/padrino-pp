@@ -34,15 +34,18 @@ module DemoProject
             response = HTTParty.get(URI.encode(url))
             response.body
         rescue Exception => e
-            puts "OERRROERASFADSF"
-            ""
+            ''
         end
     end
 
     private
     def post(url)
-        response = HTTParty.post(URI.encode(url))
-        response.body
+        begin
+            response = HTTParty.post(URI.encode(url))
+            response.body
+        rescue Exception => e
+            ''
+        end
     end
 
     def logueado
