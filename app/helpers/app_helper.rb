@@ -37,7 +37,7 @@ module DemoProject
 	               rpta = rpta + temp
 	           end
 	       end
-	       rpta
+	       rpta.html_safe
 	    end
 
 	    def load_modal_css

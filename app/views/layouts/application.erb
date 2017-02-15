@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<%= Url.statics%>bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<%= Url.statics%>bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<%= Url.statics%>bower_components/bootstrap-redmine/assets/css/styles.css" />
+    <%if defined? @qunit%><script type="text/javascript">var BASE_URL_TEST = '<%=Url.service("test_js")%>';</script><%end%>
     <%= load_css %>
     <%if defined? @qunit%><%if @qunit%><link rel="stylesheet" type="text/css" href="<%= Url.service('statics')%>bower_components/qunit/qunit/qunit.css" /><%end%><%end%>
     <!-- Fin CSS-->
@@ -61,6 +62,7 @@
       <script src="<%= Url.statics%>bower_components/swp-plugins/assets/js/mootools-core.min.js" type="text/javascript"></script>
       <script src="<%= Url.statics%>bower_components/swp-plugins/assets/js/mootools.min.js" type="text/javascript"></script>
       <script src="<%= Url.statics%>bower_components/swp-plugins/assets/js/mootools-interfaces.min.js" type="text/javascript"></script>
+      <%if defined? @qunit%><%if @qunit%><script src="<%= Url.service('statics')%>bower_components/qunit/qunit/qunit.js" type="text/javascript"></script><%end%><%end%>
       <!-- Inicio Load_JS-->
       <%= load_js %>
       <%= load_test_js %>

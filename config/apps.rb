@@ -35,6 +35,7 @@ end
 
 $cipher_key = 'eacpsqGNosmbNneg'
 $nombre_app = 'Padrino-PP'
+$ambiente = 'desarrollo'
 
 # Mounts the core application for this project
 
