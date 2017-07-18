@@ -1,7 +1,7 @@
 class Url
     @base_url = 'http://localhost:3000/'
     @services = { 
-        'statics' => 'http://localhost:8001/dashboard-redmine/',
+        'statics' => 'http://localhost:3000/',
         'test_js' => 'http://localhost:8002/dashboard-redmine-tests/qunit/',
         'accesos' => 'http://localhost:5001/', 
         'cipher' => 'http://localhost:5000/', 

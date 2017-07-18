@@ -5,7 +5,7 @@ module DemoProject
     enable :sessions
 
     before do
-         headers['server'] = 'Ruby'
+         headers['Server'] = 'Ruby'
     end
 
     before :index do

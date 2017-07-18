@@ -1,6 +1,6 @@
-DemoProject::App.controllers :home do
+DemoProject::App.controllers :home_controller do
     before :index do
-        logueado
+        #logueado
     end
   
     get :index, :map => '/home' do
